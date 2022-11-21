@@ -1,9 +1,8 @@
-import ActionButton from "./ActionButton"
+import ActionButton from "./ActionButton";
 
-const ContainerSelected = ({  options, setOptions, selected, setSelected }) => {
-  return(
+const ContainerSelected = ({ options, setOptions, selected, setSelected }) => {
+  return (
     <section>
-
       <div className="flex items-baseline justify-between">
         <h2 className="mb-3 text-lg font-medium">Active handicaps</h2>
       </div>
@@ -17,12 +16,8 @@ const ContainerSelected = ({  options, setOptions, selected, setSelected }) => {
         </thead>
         <tbody>
           {selected.map((option, idx) => (
-            <tr
-              key={idx}
-              className="text-sm border-b hover:bg-gray-50">
-              <td className="p-3">
-                {option.option}
-              </td>
+            <tr key={idx} className="text-sm border-b hover:bg-gray-50">
+              <td className="p-3">{option.option}</td>
               <td className="p-3">
                 <div className="flex items-center justify-center space-x-6">
                   <ActionButton action="removeSelected" />
@@ -32,9 +27,8 @@ const ContainerSelected = ({  options, setOptions, selected, setSelected }) => {
           ))}
         </tbody>
       </table>
-      
     </section>
-  )
-}
+  );
+};
 
-export default ContainerSelected
+export default ContainerSelected;
