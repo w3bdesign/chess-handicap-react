@@ -1,4 +1,7 @@
 const ContainerOptions = ({ options, setOptions, selected, setSelected }) => {
+  const randomElement = (inputArray) =>
+    Math.floor(Math.random() * inputArray.length);
+
   const moveOptionToSelected = (id) => {
     const updateOptions = options.filter((option) => option.id !== id);
     setOptions(updateOptions);
@@ -6,13 +9,18 @@ const ContainerOptions = ({ options, setOptions, selected, setSelected }) => {
     setSelected([...selected, ...updateSelected]);
   };
 
+  const chooseRandomHandicap = () => {
+    const randomHandicap = randomElement(options);
+    moveOptionToSelected(options[randomHandicap].id);
+  };
+
   return (
     <section>
       <div className="flex items-baseline justify-between">
         <h2 className="mb-3 text-lg font-medium">Options</h2>
         <button
-          className="px-3 py-2 text-xs font-medium text-center text-white bg-black rounded cursor-not-allowed opacity-10"
-          disabled
+          className="px-3 py-2 text-xs font-medium text-center text-white bg-black rounded"
+          onClick={() => chooseRandomHandicap()}
         >
           Select random
         </button>
