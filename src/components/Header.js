@@ -1,4 +1,4 @@
-import logo from '../logo.svg'
+import logo from "../logo.svg";
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
         <h1 className="text-3xl font-bold">Chess Handicap</h1>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
