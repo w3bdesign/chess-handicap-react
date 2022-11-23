@@ -1,3 +1,6 @@
+import ButtonAction from "./ButtonAction";
+import ButtonRandomItem from "./ButtonRandomItem";
+
 const ContainerOptions = ({ options, setOptions, selected, setSelected }) => {
   const randomElement = (inputArray) =>
     Math.floor(Math.random() * inputArray.length);
@@ -14,16 +17,19 @@ const ContainerOptions = ({ options, setOptions, selected, setSelected }) => {
     moveOptionToSelected(options[randomHandicap].id);
   };
 
+  const rollDice = () => {
+    const randomDice = Math.floor(Math.random() * 6) + 1;
+    window.alert(`Rolling dice... ${randomDice}`);
+  };
+
   return (
     <section>
       <div className="flex items-baseline justify-between">
         <h2 className="mb-3 text-lg font-medium">Options</h2>
-        <button
-          className="px-3 py-2 text-xs font-medium text-center text-white bg-black rounded"
-          onClick={() => chooseRandomHandicap()}
-        >
-          Select random
-        </button>
+        <div className="flex space-x-3">
+          <ButtonAction action={() => rollDice()} />
+          <ButtonRandomItem action={() => chooseRandomHandicap()} />        
+        </div>
       </div>
 
       <table className="w-full text-left">
