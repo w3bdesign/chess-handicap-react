@@ -11,7 +11,7 @@ export default function App() {
   const [selected, setSelected] = useState([]);
 
   return (
-    <div className="container max-w-4xl mx-auto space-y-12">
+    <div className="container max-w-4xl px-2 mx-auto space-y-12">
       <Header />
       <ContainerOptions
         options={options}

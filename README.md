@@ -1,6 +1,4 @@
 # Todo
 
-- ContainerOptions: Select random option
-- Add action: Remove random pawn (option 1)
-- Add action: Random file (option 5)
-- Add action: Roll dice (option 7)
+- Modal: Add interactive dice
+- Modal: Select random: If list is empty, throw error
