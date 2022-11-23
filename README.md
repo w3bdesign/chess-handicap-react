@@ -1,4 +1,6 @@
 # Todo
 
-- Modal: Add interactive dice
-- Modal: Select random: If list is empty, throw error
+- Modal: Create general component
+  - Error
+  - Dice
+  - Keyboard a11y
