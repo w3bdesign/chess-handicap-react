@@ -1,7 +1,8 @@
 import ButtonAction from "./ButtonAction";
 import ButtonRandomItem from "./ButtonRandomItem";
+import Modal from "./Modal";
 
-const ContainerOptions = ({ options, setOptions, selected, setSelected }) => {
+const ContainerOptions = ({ options, setOptions, selected, setSelected, showModal, setShowModal }) => {
   const randomElement = (inputArray) =>
     Math.floor(Math.random() * inputArray.length);
 
@@ -16,6 +17,8 @@ const ContainerOptions = ({ options, setOptions, selected, setSelected }) => {
     if (options.length > 0) {
       const randomIndex = randomElement(options);
       moveOptionToSelected(options[randomIndex].id);
+    } else {
+      setShowModal(true);
     }
   };
 
@@ -55,6 +58,15 @@ const ContainerOptions = ({ options, setOptions, selected, setSelected }) => {
           ))}
         </tbody>
       </table>
+
+      <Modal 
+        showModal={showModal} 
+        setShowModal={setShowModal} 
+        title="Empty list" 
+        text="No available options" 
+        buttonColor="bg-red-600 hover:bg-red-700 text-white"
+      />
+
     </section>
   );
 };
