@@ -13,8 +13,10 @@ const ContainerOptions = ({ options, setOptions, selected, setSelected }) => {
   };
 
   const chooseRandomHandicap = () => {
-    const randomHandicap = randomElement(options);
-    moveOptionToSelected(options[randomHandicap].id);
+    if (options.length > 0) {
+      const randomIndex = randomElement(options);
+      moveOptionToSelected(options[randomIndex].id);
+    }
   };
 
   const rollDice = () => {
